@@ -20,6 +20,8 @@ export const App = () => {
   };
 
   useEffect(() => {
+    if (query === '') return;
+
     const showResult = async () => {
       try {
         setLoading(true);
@@ -40,9 +42,7 @@ export const App = () => {
       }
     };
 
-    if (query && page) {
-      showResult();
-    }
+    showResult();
   }, [query, page]);
 
   const handleSubmit = event => {
