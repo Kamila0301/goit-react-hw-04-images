@@ -48,7 +48,7 @@ export const App = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (query.trim() !== '') {
+    if (event.target.elements.query.value.trim() === '') {
       Notiflix.Notify.info('Введіть, будь ласка, пошукове слово');
       return;
     }
